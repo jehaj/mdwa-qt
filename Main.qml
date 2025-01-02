@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Controls.Basic
+import QtQuick.Effects
 
 Window {
     width: 640
@@ -12,13 +14,38 @@ Window {
         width: parent.width
         height: parent.height
 
-        TextArea {
+        ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            id: textArea
-            background: Rectangle {
-                color: "orange"
+
+            TextArea {
+                id: textArea
+
+                implicitWidth: 300
+
+                wrapMode: TextEdit.Wrap
+
+                textFormat: Text.RichText
+                text: "<body style='line-height=6cm'>hello how are you \
+hello</body>"
+
+                placeholderTextColor: "#d4d4d4"
+                placeholderText: qsTr("Write the next great thing...")
+
+                background: Rectangle {
+                    implicitWidth: parent.width
+                    implicitHeight: parent.height
+                    color: "#fffefa"
+                    border.color: "green"
+                }
             }
+
+            layer.enabled: true
+            layer.effect: MultiEffect {
+                blurEnabled: true
+                blur: 0.2
+            }
+
         }
     }
 }
