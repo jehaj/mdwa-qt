@@ -25,10 +25,6 @@ Window {
 
                 wrapMode: TextEdit.Wrap
 
-                textFormat: Text.RichText
-                text: "<body style='line-height=6cm'>hello how are you \
-hello</body>"
-
                 placeholderTextColor: "#d4d4d4"
                 placeholderText: qsTr("Write the next great thing...")
 
